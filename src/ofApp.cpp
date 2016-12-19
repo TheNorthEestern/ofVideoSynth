@@ -1,7 +1,7 @@
 #include "ofApp.h"
 
 void ofApp::stripePattern() {
-img/screenshot.png    ofSetColor(ofColor::black);
+    ofSetColor(ofColor::black);
     ofSetLineWidth(3.0);
     ofNoFill();
     for (int i = -countX; i <= countX; i++) {
