@@ -1,7 +1,7 @@
 #include "ofApp.h"
 
 void ofApp::stripePattern() {
-    ofSetColor(ofColor::black);
+img/screenshot.png    ofSetColor(ofColor::black);
     ofSetLineWidth(3.0);
     ofNoFill();
     for (int i = -countX; i <= countX; i++) {
@@ -23,15 +23,12 @@ ofParameterGroup ofApp::configureTitle(string title) {
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    // string windowTitle = "Parameters";
     ofSetWindowTitle("Video Synth!");
     ofSetWindowShape(1280, 720);
     ofSetFrameRate(60);
     ofBackground(ofColor::azure);
     
-    // parametersTitle.setName("Parameters");
-    
-    gui.setup(configureTitle("Paramters"), "settings.xml");
+    gui.setup(configureTitle("Parameters"), "settings.xml");
     gui.add(countX.setup("countX", 50, 0, 200));
     gui.add(stepX.setup("stepX", 20, 0, 200));
     gui.add(twistX.setup("twistX", 5, -45, 45));
