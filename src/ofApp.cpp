@@ -1,16 +1,20 @@
 #include "ofApp.h"
 
 void ofApp::stripePattern() {
-    ofSetColor(ofColor::black);
-    ofSetLineWidth(3.0);
-    ofNoFill();
+    ofSetColor(color);
+    ofSetLineWidth(1);
+    filled ? ofFill() : ofNoFill();
     for (int i = -countX; i <= countX; i++) {
         ofPushMatrix();
         ofTranslate(i * stepX, 0);
         ofRotate(i * twistX);
-        // ofLine(0, -100, 0, 100);
-        ofScale(3, 1);
-        ofTriangle(0, 0, -50, 100, 50, 100);
+        
+        ofTranslate(0, shiftY);
+        ofRotate(rotate);
+        ofScale(size->x, size->y);
+        type ? ofDrawRectangle(-50, -50, 100, 100):
+        ofDrawTriangle(0, 0, -50, 100, 50, 100);
+        
         ofPopMatrix();
     }
 }
@@ -23,10 +27,13 @@ ofParameterGroup ofApp::configureTitle(string title) {
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    // string windowTitle = "Parameters";
     ofSetWindowTitle("Video Synth!");
     ofSetWindowShape(1280, 720);
     ofSetFrameRate(60);
     ofBackground(ofColor::azure);
+    
+    // parametersTitle.setName("Parameters");
     
     gui.setup(configureTitle("Parameters"), "settings.xml");
     gui.add(countX.setup("countX", 50, 0, 200));
@@ -68,7 +75,7 @@ void ofApp::draw(){
     // Drawing code goes here.
     stripePattern();
     ofPopMatrix();
-    gui.draw();
+    showGui ? gui.draw() : void();
 }
 
 void ofApp::exit() {
@@ -77,7 +84,7 @@ void ofApp::exit() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    
+    showGui = key == 'z' ? !showGui : !showGui;
 }
 
 //--------------------------------------------------------------
@@ -126,6 +133,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
     
 }

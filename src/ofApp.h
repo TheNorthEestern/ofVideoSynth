@@ -24,7 +24,9 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     ofParameterGroup configureTitle(string title);
-
+    
+    bool showGui = true;
+    
     ofxPanel gui;
     ofxIntSlider countX;
     ofxFloatSlider stepX;
