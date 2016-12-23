@@ -1,0 +1,36 @@
+<Paramters>
+	<countX>58</countX>
+	<stepX>6</stepX>
+	<twistX>-14.4</twistX>
+	<Global>
+		<Scale>1</Scale>
+		<Rotate>0</Rotate>
+		<Background>255</Background>
+	</Global>
+	<Primitive>
+		<shiftY>-30.6122</shiftY>
+		<rotate>0</rotate>
+		<size>6, 6</size>
+		<color>0, 0, 0, 255</color>
+		<filled>0</filled>
+		<type>0</type>
+	</Primitive>
+<Parameters>
+		<countX>50</countX>
+		<stepX>35</stepX>
+		<twistX>0</twistX>
+		<Global>
+			<Scale>0.637755</Scale>
+			<Rotate>-180</Rotate>
+			<Background>255</Background>
+		</Global>
+		<Primitive>
+			<shiftY>61.2245</shiftY>
+			<rotate>16.5306</rotate>
+			<size>6.5681, 7.19284</size>
+			<color>147, 172, 191, 255</color>
+			<filled>0</filled>
+			<type>0</type>
+		</Primitive>
+	</Parameters>
+</Paramters>
