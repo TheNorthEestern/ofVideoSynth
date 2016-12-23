@@ -11,6 +11,7 @@ public:
     void draw();
     void exit();
     void stripePattern();
+    void matrixPattern();
     
     void keyPressed(int key);
     void keyReleased(int key);
@@ -42,4 +43,7 @@ public:
     ofxVec2Slider size;
     ofxColorSlider color;
     ofxToggle filled, type;
+    
+    ofxIntSlider countY;
+    ofxFloatSlider stepY, twistY, pinchY;
 };

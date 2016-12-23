@@ -2,6 +2,20 @@
 #include <iostream>
 using namespace std;
 
+void ofApp::matrixPattern() {
+    for (int y=-countY; y <= countY; y++) {
+        ofPushMatrix();
+        if (countY > 0) {
+            float scale = ofMap(y, -countY, countY, 1 - pinchY, 1);
+            ofScale(scale, scale);
+        }
+        ofTranslate(0, y * stepY);
+        ofRotate( y * twistY );
+        stripePattern();
+        ofPopMatrix();
+    }
+}
+
 void ofApp::stripePattern() {
     ofSetColor(color);
     ofSetLineWidth(1);
@@ -42,6 +56,11 @@ void ofApp::setup(){
     gui.add(stepX.setup("stepX", 20, 0, 200));
     gui.add(twistX.setup("twistX", 5, -45, 45));
     
+    gui.add(countY.setup("countY", 0, 0, 50));
+    gui.add(stepY.setup("stepY", 20, 0, 200));
+    gui.add(twistY.setup("twistY", 0, -30, 30));
+    gui.add(pinchY.setup("pinchY", 0, 0, 1));
+    
     globalGroup.setup(configureTitle("Global"));
     globalGroup.add(Scale.setup("Scale", 1, 0.0, 1));
     globalGroup.add(Rotate.setup("Rotate", 0, -180, 180));
@@ -75,7 +94,7 @@ void ofApp::draw(){
     ofRotate(Rotate);
     
     // Drawing code goes here.
-    stripePattern();
+    matrixPattern();
     ofPopMatrix();
     showGui ? gui.draw() : void();
 }
