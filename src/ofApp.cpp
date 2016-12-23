@@ -74,6 +74,9 @@ void ofApp::setup(){
     primGroup.add(color.setup("color", ofColor::black, ofColor(0,0,0,0),ofColor::white));
     primGroup.add(filled.setup("filled", false));
     primGroup.add(type.setup("type", false));
+    
+    ofLoadImage(image, "collage.png");
+    
     gui.add(&primGroup);
     
     gui.loadFromFile(settingsFileName);
@@ -87,6 +90,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(Background);
+    
     ofPushMatrix();
     ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
     float Scl = pow((double)Scale, 4.0);
@@ -96,6 +100,9 @@ void ofApp::draw(){
     // Drawing code goes here.
     matrixPattern();
     ofPopMatrix();
+    
+    ofSetColor(255);
+    image.draw(0, 0, ofGetWidth(), ofGetHeight());
     showGui ? gui.draw() : void();
 }
 

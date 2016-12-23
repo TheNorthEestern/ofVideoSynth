@@ -46,4 +46,6 @@ public:
     
     ofxIntSlider countY;
     ofxFloatSlider stepY, twistY, pinchY;
+    
+    ofTexture image;
 };
