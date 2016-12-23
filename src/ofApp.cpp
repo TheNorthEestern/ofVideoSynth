@@ -1,4 +1,6 @@
 #include "ofApp.h"
+#include <iostream>
+using namespace std;
 
 void ofApp::stripePattern() {
     ofSetColor(color);
@@ -13,7 +15,7 @@ void ofApp::stripePattern() {
         ofRotate(rotate);
         ofScale(size->x, size->y);
         type ? ofDrawRectangle(-50, -50, 100, 100):
-        ofDrawTriangle(0, 0, -50, 100, 50, 100);
+               ofDrawTriangle(0, 0, -50, 100, 50, 100);
         
         ofPopMatrix();
     }
@@ -84,7 +86,26 @@ void ofApp::exit() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    showGui = key == 'z' ? !showGui : !showGui;
+    ofFileDialogResult saveResult, loadResult;
+    switch(key) {
+        case 'z':
+            showGui = !showGui;
+            break;
+        
+        case OF_KEY_RETURN:
+            ofSaveScreen("screenshot.png");
+            break;
+        
+        case 's':
+            saveResult = ofSystemSaveDialog("preset.xml", "Saving Preset");
+            if ( saveResult.bSuccess ) gui.saveToFile(saveResult.filePath);
+            break;
+        
+        case 'l':
+            loadResult = ofSystemLoadDialog("Loading Preset");
+            if (loadResult.bSuccess) gui.loadFromFile(loadResult.filePath);
+            break;
+    }
 }
 
 //--------------------------------------------------------------
@@ -133,6 +154,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){
+void ofApp::dragEvent(ofDragInfo dragInfo){ 
     
 }

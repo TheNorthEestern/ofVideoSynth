@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ofMain.h"
 #include "ofxGui.h"
+#include "ofMain.h"
 
 class ofApp : public ofBaseApp{
 public:
@@ -24,7 +24,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     ofParameterGroup configureTitle(string title);
-    
+
     bool showGui = true;
     
     ofxPanel gui;
