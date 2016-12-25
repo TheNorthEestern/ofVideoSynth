@@ -26,14 +26,14 @@
 		</Global>
 		<Primitive>
 			<shiftY>-734.694</shiftY>
-			<rotate>53.2653</rotate>
+			<rotate>16.5306</rotate>
 			<size>0.63307, 0.841316</size>
 			<color>79, 138, 255, 71</color>
 			<filled>1</filled>
 			<type>0</type>
 		</Primitive>
-	<countY>20</countY>
-		<stepY>57</stepY>
+	<countY>14</countY>
+		<stepY>158</stepY>
 		<twistY>12.9</twistY>
 		<pinchY>0.48</pinchY>
 	</Parameters>

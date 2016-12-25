@@ -48,4 +48,6 @@ public:
     ofxFloatSlider stepY, twistY, pinchY;
     
     ofTexture image;
+    ofPoint points[4];
+    int cornerIndex = 0;
 };
