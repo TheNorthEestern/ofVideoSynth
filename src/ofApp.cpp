@@ -49,12 +49,8 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     ofBackground(ofColor::azure);
     
-    image.allocate(600, 600, GL_RGBA);
+    // image.allocate(600, 600, GL_RGBA);
     ofLoadImage(image, "collage.png");
-    points [0].x = 100; points [0].y = 100;
-    points [1].x = 600; points [1].y = 100;
-    points [2].x = 600; points [2].y = 600;
-    points [3].x = 100; points [3].y = 600;
     
     // parametersTitle.setName("Parameters");
     
@@ -96,7 +92,6 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    image.draw(points[0], points[1], points[2], points[3]);
     ofBackground(Background);
     
     ofSetColor(255);
