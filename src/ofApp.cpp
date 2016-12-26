@@ -49,6 +49,9 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     ofBackground(ofColor::azure);
     
+    video.loadAsync("flowing.mp4");
+    video.play();
+    
     // image.allocate(600, 600, GL_RGBA);
     ofLoadImage(image, "collage.png");
     
@@ -78,8 +81,6 @@ void ofApp::setup(){
     primGroup.add(filled.setup("filled", false));
     primGroup.add(type.setup("type", false));
     
-    
-    
     gui.add(&primGroup);
     
     gui.loadFromFile(settingsFileName);
@@ -87,7 +88,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
+    video.update();
 }
 
 //--------------------------------------------------------------
@@ -96,6 +97,9 @@ void ofApp::draw(){
     
     ofSetColor(255);
     image.draw(0, 0, ofGetWidth(), ofGetHeight());
+    
+    ofSetColor(255);
+    video.draw(0, 0, ofGetWidth(), ofGetHeight());
     
     ofPushMatrix();
     ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);

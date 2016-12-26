@@ -48,4 +48,5 @@ public:
     ofxFloatSlider stepY, twistY, pinchY;
     
     ofTexture image;
+    ofVideoPlayer video;
 };
