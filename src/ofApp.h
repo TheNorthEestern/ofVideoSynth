@@ -9,6 +9,7 @@ public:
     void setup();
     void update();
     void draw();
+    void draw2d();
     void exit();
     void stripePattern();
     void matrixPattern();
@@ -52,4 +53,10 @@ public:
     ofVideoGrabber camera;
     ofxGuiGroup mixerGroup;
     ofxFloatSlider imageAlpha, videoAlpha, cameraAlpha;
+    ofFbo frameBufferObject;
+    
+    ofShader shader;
+    ofxToggle kenabled;
+    ofxIntSlider ksectors;
+    ofxFloatSlider kangle, kx, ky;
 };

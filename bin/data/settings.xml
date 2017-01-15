@@ -33,8 +33,13 @@
 			<type>0</type>
 		</Primitive>
 	<countY>15</countY>
-		<stepY>158</stepY>
+		<stepY>93</stepY>
 		<twistY>0</twistY>
-		<pinchY>0.48</pinchY>
+		<pinchY>0.32</pinchY>
+	<Mixer>
+			<image>127.5</image>
+			<video>160.026</video>
+			<camera>145.714</camera>
+		</Mixer>
 	</Parameters>
 </Paramters>
