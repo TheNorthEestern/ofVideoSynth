@@ -49,4 +49,7 @@ public:
     
     ofTexture image;
     ofVideoPlayer video;
+    ofVideoGrabber camera;
+    ofxGuiGroup mixerGroup;
+    ofxFloatSlider imageAlpha, videoAlpha, cameraAlpha;
 };

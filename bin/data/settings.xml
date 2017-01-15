@@ -18,7 +18,7 @@
 <Parameters>
 		<countX>200</countX>
 		<stepX>0</stepX>
-		<twistX>17.1</twistX>
+		<twistX>8.55</twistX>
 		<Global>
 			<Scale>0.55102</Scale>
 			<Rotate>135.918</Rotate>
@@ -28,13 +28,13 @@
 			<shiftY>-734.694</shiftY>
 			<rotate>16.5306</rotate>
 			<size>0.63307, 0.841316</size>
-			<color>79, 138, 62, 82</color>
+			<color>79, 138, 62, 75</color>
 			<filled>1</filled>
 			<type>0</type>
 		</Primitive>
-	<countY>14</countY>
+	<countY>15</countY>
 		<stepY>158</stepY>
-		<twistY>12.9</twistY>
+		<twistY>0</twistY>
 		<pinchY>0.48</pinchY>
 	</Parameters>
 </Paramters>

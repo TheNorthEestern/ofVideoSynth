@@ -83,23 +83,41 @@ void ofApp::setup(){
     
     gui.add(&primGroup);
     
+    mixerGroup.setup(configureTitle("Mixer"));
+    mixerGroup.setHeaderBackgroundColor(ofColor::darkRed);
+    mixerGroup.setBorderColor(ofColor::darkRed);
+    
+    mixerGroup.add(imageAlpha.setup("image", 100, 0, 255));
+    mixerGroup.add(videoAlpha.setup("video", 200, 0, 255));
+    mixerGroup.add(cameraAlpha.setup("camera", 100, 0, 255));
+    
+    gui.minimizeAll();
+    gui.add(&mixerGroup);
+    
     gui.loadFromFile(settingsFileName);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     video.update();
+    cout << camera.isInitialized() << endl;
+    if (camera.isInitialized()) camera.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(Background);
     
-    ofSetColor(255);
+    ofSetColor(255, imageAlpha);
     image.draw(0, 0, ofGetWidth(), ofGetHeight());
     
-    ofSetColor(255);
+    ofSetColor(255, videoAlpha);
     video.draw(0, 0, ofGetWidth(), ofGetHeight());
+    
+    if (camera.isInitialized()) {
+        ofSetColor(255, cameraAlpha);
+        camera.draw(0, 0, ofGetWidth(), ofGetHeight());
+    }
     
     ofPushMatrix();
     ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
@@ -122,6 +140,13 @@ void ofApp::exit() {
 void ofApp::keyPressed(int key){
     ofFileDialogResult saveResult, loadResult;
     switch(key) {
+            
+        case 'c':
+            camera.setDeviceID(0);
+            camera.setDesiredFrameRate(30);
+            camera.initGrabber(1280, 720);
+            break;
+            
         case 'z':
             showGui = !showGui;
             break;
