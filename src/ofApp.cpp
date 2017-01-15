@@ -106,6 +106,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
     ofBackground(Background);
     
     ofSetColor(255, imageAlpha);
@@ -118,6 +119,7 @@ void ofApp::draw(){
         ofSetColor(255, cameraAlpha);
         camera.draw(0, 0, ofGetWidth(), ofGetHeight());
     }
+    ofEnableAlphaBlending();
     
     ofPushMatrix();
     ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
